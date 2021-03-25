@@ -1,4 +1,8 @@
 {
+  "api": {
+    "schemaPath": "https://gw.alipayobjects.com/os/antfincdn/M%24jrzTTYJN/oneapi.json",
+    "serversPath": "./src/services"
+  },
   "cms": {
     "schemaPath": "http://uat-fuse-cms-api.zhcs.csbtv.com/api/cms/v3/api-docs",
     "serversPath": "./src/services",

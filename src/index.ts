@@ -120,13 +120,14 @@ export const generateService = async ({
       mockFolder: mockFolder || './mocks/',
     });
   }
-
-  process.exit();
 };
 
-export function generateByConfig(config) {
-  Object.keys(config).forEach((key) => {
-      const { requestLibPath, serversPath, schemaPath, mockFolder, excludeServices, customTypes } = config[key];
-      generateService({ requestLibPath, serversPath, schemaPath, projectName: key, namespace: key, mockFolder}, excludeServices, customTypes);
-  });
+export async function generateByConfig(config) {
+  const keys = Object.keys(config);
+  for (let i = 0; i < keys.length; i += 1) {
+    const key = keys[i];
+    const { requestLibPath, serversPath, schemaPath, mockFolder, excludeServices, customTypes } = config[key];
+    // eslint-disable-next-line no-await-in-loop
+    await generateService({ requestLibPath, serversPath, schemaPath, projectName: key, namespace: key, mockFolder}, excludeServices, customTypes);
+  }
 }
