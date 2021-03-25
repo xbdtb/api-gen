@@ -1,7 +1,7 @@
 {
   "name": "@xbdtb/api-gen",
   "version": "1.0.13",
-  "description": "",
+  "description": "generate client code from openapi document",
   "license": "MIT",
   "author": "xbdtb",
   "main": "dist/index.js",
@@ -13,6 +13,13 @@
     "type": "git",
     "url": "git+https://github.com/xbdtb/api-gen.git"
   },
+  "keywords": [
+    "code",
+    "generate",
+    "openapi",
+    "swagger",
+    "typescript"
+  ],
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build && np --no-cleanup --yolo --no-publish --any-branch",
