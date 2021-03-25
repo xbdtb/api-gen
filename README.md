@@ -9,15 +9,15 @@ yarn add @xbdtb/api-gen --dev
 
 ## Configuration
 ``` javascript
-# config.js
+// config.js
 module.exports = {
   api: {
-    # url or file path
+    // url or file path
     schemaPath: 'https://gw.alipayobjects.com/os/antfincdn/M%24jrzTTYJN/oneapi.json',
     serversPath: './src/services/generated',
   },
   another: {
-    # url or file path
+    // url or file path
     schemaPath: 'https://gw.alipayobjects.com/os/antfincdn/M%24jrzTTYJN/oneapi.json',
     serversPath: './src/services/generated',
     excludeServices: ['login'],
