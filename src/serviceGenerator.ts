@@ -20,7 +20,7 @@ import path, { join } from 'path';
 import Log from './log';
 import { parse } from 'java-ast';
 
-import { writeFile, stripDot } from './util';
+import { writeFile, stripDot, prettierFile } from './util';
 import type { GenerateServiceProps } from './index';
 
 const BASE_DIRS = ['service', 'services'];
@@ -353,9 +353,6 @@ class ServiceGenerator {
       prettierError.push(hasError);
     });
 
-    if (prettierError.includes(true)) {
-      Log(`🚥 格式化失败，请检查 service 文件内可能存在的语法错误`);
-    }
     // 生成 index 文件
     const classNames = this.classNameList.filter((item) => !excludeServices.includes(item.fileName))
     this.genFileFromTemplate(`index.ts`, 'serviceIndex', {
@@ -363,8 +360,15 @@ class ServiceGenerator {
       disableTypeCheck: false,
     });
 
-    writeFileSync(path.join(this.finalPath, ".fullTypes.js"), JSON.stringify(allTypes, null, 2), {encoding: 'utf8',});
+    const fullTypes = JSON.stringify(allTypes, null, 2);
+    const [prettierContent, hasError] = prettierFile(fullTypes);
+    prettierError.push(hasError);
 
+    writeFileSync(path.join(this.finalPath, ".fullTypes.js"), prettierContent, {encoding: 'utf8'});
+
+    if (prettierError.includes(true)) {
+      Log(`🚥 格式化失败，请检查 service 文件内可能存在的语法错误`);
+    }
     // 打印日志
     Log(`✅ 成功生成 service 文件`);
   }
