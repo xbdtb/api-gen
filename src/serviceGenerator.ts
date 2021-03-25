@@ -377,6 +377,7 @@ class ServiceGenerator {
         const genParams = this.apiData[tag]
           .filter((api) => {
             // 暂不支持变量
+            return true;
             return !api.path.includes('${') && !api.path.includes('{');;
           })
           .map((api) => {

@@ -80,6 +80,32 @@
             "required": false
           }
         ]
+      },
+      "EnumVo": {
+        "typeName": "EnumVo<T>",
+        "type": "Record<string, any>",
+        "props": [
+          {
+            "$ref": "#/components/schemas/BaseEnum",
+            "name": "baseEnum",
+            "type": "T",
+            "desc": "",
+            "required": false
+          },
+          {
+            "type": "number",
+            "format": "int32",
+            "name": "code",
+            "desc": "",
+            "required": false
+          },
+          {
+            "type": "string",
+            "name": "desc",
+            "desc": "",
+            "required": false
+          }
+        ]
       }
     }
   }

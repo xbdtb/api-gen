@@ -1,0 +1,3249 @@
+[
+  {
+    "typeName": "ApiResult",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "format": "int32",
+        "name": "code",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "Record<string, any>",
+        "name": "data",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "message",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "name": "success",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "format": "date-time",
+        "name": "time",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "ApiResult<List<SysDepartmentTreeVo>>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "format": "int32",
+        "name": "code",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "SysDepartmentTreeVo[]",
+        "items": {
+          "$ref": "#/components/schemas/SysDepartmentTreeVo"
+        },
+        "name": "data",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "message",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "name": "success",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "format": "date-time",
+        "name": "time",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "ApiResult<List<SysDepartment>>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "format": "int32",
+        "name": "code",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "SysDepartment[]",
+        "items": {
+          "$ref": "#/components/schemas/SysDepartment"
+        },
+        "name": "data",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "message",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "name": "success",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "format": "date-time",
+        "name": "time",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "ApiResult<List<SysPermissionTreeVo>>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "format": "int32",
+        "name": "code",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "SysPermissionTreeVo[]",
+        "items": {
+          "$ref": "#/components/schemas/SysPermissionTreeVo"
+        },
+        "name": "data",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "message",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "name": "success",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "format": "date-time",
+        "name": "time",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "ApiResult<List<SysPermission>>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "format": "int32",
+        "name": "code",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "SysPermission[]",
+        "items": {
+          "$ref": "#/components/schemas/SysPermission"
+        },
+        "name": "data",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "message",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "name": "success",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "format": "date-time",
+        "name": "time",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "ApiResult<List<SysRole>>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "format": "int32",
+        "name": "code",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "SysRole[]",
+        "items": {
+          "$ref": "#/components/schemas/SysRole"
+        },
+        "name": "data",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "message",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "name": "success",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "format": "date-time",
+        "name": "time",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "ApiResult<List<long>>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "format": "int32",
+        "name": "code",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "number[]",
+        "items": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": "data",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "message",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "name": "success",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "format": "date-time",
+        "name": "time",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "ApiResult<List<string>>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "format": "int32",
+        "name": "code",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string[]",
+        "items": {
+          "type": "string"
+        },
+        "name": "data",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "message",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "name": "success",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "format": "date-time",
+        "name": "time",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "ApiResult<LoginSysUserTokenVo>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "format": "int32",
+        "name": "code",
+        "desc": "",
+        "required": false
+      },
+      {
+        "$ref": "#/components/schemas/LoginSysUserTokenVo",
+        "name": "data",
+        "type": "LoginSysUserTokenVo",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "message",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "name": "success",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "format": "date-time",
+        "name": "time",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "ApiResult<LoginSysUserVo>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "format": "int32",
+        "name": "code",
+        "desc": "",
+        "required": false
+      },
+      {
+        "$ref": "#/components/schemas/LoginSysUserVo",
+        "name": "data",
+        "type": "LoginSysUserVo",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "message",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "name": "success",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "format": "date-time",
+        "name": "time",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "ApiResult<Map<string,Map<int,EnumVo<BaseEnum>>>>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "format": "int32",
+        "name": "code",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "Record<string, any>",
+        "additionalProperties": {
+          "type": "object"
+        },
+        "name": "data",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "message",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "name": "success",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "format": "date-time",
+        "name": "time",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "ApiResult<Paging<SysDepartmentQueryVo>>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "format": "int32",
+        "name": "code",
+        "desc": "",
+        "required": false
+      },
+      {
+        "$ref": "#/components/schemas/Paging<SysDepartmentQueryVo>",
+        "name": "data",
+        "type": "Paging<SysDepartmentQueryVo>",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "message",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "name": "success",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "format": "date-time",
+        "name": "time",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "ApiResult<Paging<SysLoginLog>>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "format": "int32",
+        "name": "code",
+        "desc": "",
+        "required": false
+      },
+      {
+        "$ref": "#/components/schemas/Paging<SysLoginLog>",
+        "name": "data",
+        "type": "Paging<SysLoginLog>",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "message",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "name": "success",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "format": "date-time",
+        "name": "time",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "ApiResult<Paging<SysOperationLog>>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "format": "int32",
+        "name": "code",
+        "desc": "",
+        "required": false
+      },
+      {
+        "$ref": "#/components/schemas/Paging<SysOperationLog>",
+        "name": "data",
+        "type": "Paging<SysOperationLog>",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "message",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "name": "success",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "format": "date-time",
+        "name": "time",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "ApiResult<Paging<SysPermissionQueryVo>>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "format": "int32",
+        "name": "code",
+        "desc": "",
+        "required": false
+      },
+      {
+        "$ref": "#/components/schemas/Paging<SysPermissionQueryVo>",
+        "name": "data",
+        "type": "Paging<SysPermissionQueryVo>",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "message",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "name": "success",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "format": "date-time",
+        "name": "time",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "ApiResult<Paging<SysRole>>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "format": "int32",
+        "name": "code",
+        "desc": "",
+        "required": false
+      },
+      {
+        "$ref": "#/components/schemas/Paging<SysRole>",
+        "name": "data",
+        "type": "Paging<SysRole>",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "message",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "name": "success",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "format": "date-time",
+        "name": "time",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "ApiResult<Paging<SysUserQueryVo>>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "format": "int32",
+        "name": "code",
+        "desc": "",
+        "required": false
+      },
+      {
+        "$ref": "#/components/schemas/Paging<SysUserQueryVo>",
+        "name": "data",
+        "type": "Paging<SysUserQueryVo>",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "message",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "name": "success",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "format": "date-time",
+        "name": "time",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "ApiResult<SysDepartmentQueryVo>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "format": "int32",
+        "name": "code",
+        "desc": "",
+        "required": false
+      },
+      {
+        "$ref": "#/components/schemas/SysDepartmentQueryVo",
+        "name": "data",
+        "type": "SysDepartmentQueryVo",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "message",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "name": "success",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "format": "date-time",
+        "name": "time",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "ApiResult<SysPermissionQueryVo>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "format": "int32",
+        "name": "code",
+        "desc": "",
+        "required": false
+      },
+      {
+        "$ref": "#/components/schemas/SysPermissionQueryVo",
+        "name": "data",
+        "type": "SysPermissionQueryVo",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "message",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "name": "success",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "format": "date-time",
+        "name": "time",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "ApiResult<SysRole>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "format": "int32",
+        "name": "code",
+        "desc": "",
+        "required": false
+      },
+      {
+        "$ref": "#/components/schemas/SysRole",
+        "name": "data",
+        "type": "SysRole",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "message",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "name": "success",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "format": "date-time",
+        "name": "time",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "ApiResult<SysUserQueryVo>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "format": "int32",
+        "name": "code",
+        "desc": "",
+        "required": false
+      },
+      {
+        "$ref": "#/components/schemas/SysUserQueryVo",
+        "name": "data",
+        "type": "SysUserQueryVo",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "message",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "name": "success",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "format": "date-time",
+        "name": "time",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "ApiResult<boolean>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "format": "int32",
+        "name": "code",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "name": "data",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "message",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "name": "success",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "format": "date-time",
+        "name": "time",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "ApiResult<string>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "format": "int32",
+        "name": "code",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "data",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "message",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "name": "success",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "format": "date-time",
+        "name": "time",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "BaseEnum",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "format": "int32",
+        "name": "code",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "desc",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "EnumVo<BaseEnum>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "$ref": "#/components/schemas/BaseEnum",
+        "name": "baseEnum",
+        "type": "BaseEnum",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "number",
+        "format": "int32",
+        "name": "code",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "desc",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "Link",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "string",
+        "name": "href",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "name": "templated",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "LoginParam",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "string",
+        "description": "验证码",
+        "name": "code",
+        "desc": "验证码",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "密码",
+        "example": "123456",
+        "name": "password",
+        "desc": "密码",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "账号",
+        "example": "admin",
+        "name": "username",
+        "desc": "账号",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "验证码Token",
+        "name": "verifyToken",
+        "desc": "验证码Token",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "LoginSysUserTokenVo",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "$ref": "#/components/schemas/LoginSysUserVo",
+        "name": "loginSysUserVo",
+        "type": "LoginSysUserVo",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "token",
+        "name": "token",
+        "desc": "token",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "LoginSysUserVo",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "description": "部门id",
+        "format": "int64",
+        "name": "departmentId",
+        "desc": "部门id",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "部门名称",
+        "name": "departmentName",
+        "desc": "部门名称",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "性别，0：女，1：男，默认1",
+        "format": "int32",
+        "name": "gender",
+        "desc": "性别，0：女，1：男，默认1",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "头像",
+        "name": "head",
+        "desc": "头像",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "主键",
+        "format": "int64",
+        "name": "id",
+        "desc": "主键",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "昵称",
+        "name": "nickname",
+        "desc": "昵称",
+        "required": false
+      },
+      {
+        "uniqueItems": true,
+        "type": "string[]",
+        "description": "权限编码列表",
+        "items": {
+          "type": "string"
+        },
+        "name": "permissionCodes",
+        "desc": "权限编码列表",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "角色编码",
+        "name": "roleCode",
+        "desc": "角色编码",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "角色id",
+        "format": "int64",
+        "name": "roleId",
+        "desc": "角色id",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "角色名称",
+        "name": "roleName",
+        "desc": "角色名称",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "状态，0：禁用，1：启用，2：锁定",
+        "format": "int32",
+        "name": "state",
+        "desc": "状态，0：禁用，1：启用，2：锁定",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "用户名",
+        "name": "username",
+        "desc": "用户名",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "OrderItem",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "boolean",
+        "name": "asc",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "name": "column",
+        "desc": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "Paging<SysDepartmentQueryVo>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "description": "页码",
+        "format": "int64",
+        "name": "pageIndex",
+        "desc": "页码",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "页大小",
+        "format": "int64",
+        "name": "pageSize",
+        "desc": "页大小",
+        "required": false
+      },
+      {
+        "type": "SysDepartmentQueryVo[]",
+        "description": "数据列表",
+        "items": {
+          "$ref": "#/components/schemas/SysDepartmentQueryVo"
+        },
+        "name": "records",
+        "desc": "数据列表",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "总行数",
+        "format": "int64",
+        "name": "total",
+        "desc": "总行数",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "Paging<SysLoginLog>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "description": "页码",
+        "format": "int64",
+        "name": "pageIndex",
+        "desc": "页码",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "页大小",
+        "format": "int64",
+        "name": "pageSize",
+        "desc": "页大小",
+        "required": false
+      },
+      {
+        "type": "SysLoginLog[]",
+        "description": "数据列表",
+        "items": {
+          "$ref": "#/components/schemas/SysLoginLog"
+        },
+        "name": "records",
+        "desc": "数据列表",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "总行数",
+        "format": "int64",
+        "name": "total",
+        "desc": "总行数",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "Paging<SysOperationLog>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "description": "页码",
+        "format": "int64",
+        "name": "pageIndex",
+        "desc": "页码",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "页大小",
+        "format": "int64",
+        "name": "pageSize",
+        "desc": "页大小",
+        "required": false
+      },
+      {
+        "type": "SysOperationLog[]",
+        "description": "数据列表",
+        "items": {
+          "$ref": "#/components/schemas/SysOperationLog"
+        },
+        "name": "records",
+        "desc": "数据列表",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "总行数",
+        "format": "int64",
+        "name": "total",
+        "desc": "总行数",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "Paging<SysPermissionQueryVo>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "description": "页码",
+        "format": "int64",
+        "name": "pageIndex",
+        "desc": "页码",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "页大小",
+        "format": "int64",
+        "name": "pageSize",
+        "desc": "页大小",
+        "required": false
+      },
+      {
+        "type": "SysPermissionQueryVo[]",
+        "description": "数据列表",
+        "items": {
+          "$ref": "#/components/schemas/SysPermissionQueryVo"
+        },
+        "name": "records",
+        "desc": "数据列表",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "总行数",
+        "format": "int64",
+        "name": "total",
+        "desc": "总行数",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "Paging<SysRole>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "description": "页码",
+        "format": "int64",
+        "name": "pageIndex",
+        "desc": "页码",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "页大小",
+        "format": "int64",
+        "name": "pageSize",
+        "desc": "页大小",
+        "required": false
+      },
+      {
+        "type": "SysRole[]",
+        "description": "数据列表",
+        "items": {
+          "$ref": "#/components/schemas/SysRole"
+        },
+        "name": "records",
+        "desc": "数据列表",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "总行数",
+        "format": "int64",
+        "name": "total",
+        "desc": "总行数",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "Paging<SysUserQueryVo>",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "description": "页码",
+        "format": "int64",
+        "name": "pageIndex",
+        "desc": "页码",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "页大小",
+        "format": "int64",
+        "name": "pageSize",
+        "desc": "页大小",
+        "required": false
+      },
+      {
+        "type": "SysUserQueryVo[]",
+        "description": "数据列表",
+        "items": {
+          "$ref": "#/components/schemas/SysUserQueryVo"
+        },
+        "name": "records",
+        "desc": "数据列表",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "总行数",
+        "format": "int64",
+        "name": "total",
+        "desc": "总行数",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "ResetPasswordParam",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "string",
+        "description": "新密码",
+        "name": "confirmPassword",
+        "desc": "新密码",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "新密码",
+        "name": "newPassword",
+        "desc": "新密码",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "用户id",
+        "name": "userId",
+        "desc": "用户id",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "SysDepartment",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "description": "创建人用户id",
+        "format": "int64",
+        "name": "createBy",
+        "desc": "创建人用户id",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "创建时间",
+        "format": "date-time",
+        "name": "createTime",
+        "desc": "创建时间",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "description": "逻辑删除，0：未删除，1：已删除",
+        "example": false,
+        "name": "deleted",
+        "desc": "逻辑删除，0：未删除，1：已删除",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "主键",
+        "format": "int64",
+        "name": "id",
+        "desc": "主键",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "部门名称",
+        "name": "name",
+        "desc": "部门名称",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "父id",
+        "format": "int64",
+        "name": "parentId",
+        "desc": "父id",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "备注",
+        "name": "remark",
+        "desc": "备注",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "排序",
+        "format": "int32",
+        "name": "sort",
+        "desc": "排序",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "状态，0：禁用，1：启用",
+        "format": "int32",
+        "name": "state",
+        "desc": "状态，0：禁用，1：启用",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "修改人用户id",
+        "format": "int64",
+        "name": "updateBy",
+        "desc": "修改人用户id",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "修改时间",
+        "format": "date-time",
+        "name": "updateTime",
+        "desc": "修改时间",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "版本",
+        "format": "int32",
+        "name": "version",
+        "desc": "版本",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "SysDepartmentPageParam",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "string",
+        "description": "搜索字符串",
+        "name": "keyword",
+        "desc": "搜索字符串",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "页码,默认为1",
+        "format": "int64",
+        "example": 1,
+        "name": "pageIndex",
+        "desc": "页码,默认为1",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "页大小,默认为10",
+        "format": "int64",
+        "example": 10,
+        "name": "pageSize",
+        "desc": "页大小,默认为10",
+        "required": false
+      },
+      {
+        "type": "OrderItem[]",
+        "description": "排序",
+        "items": {
+          "$ref": "#/components/schemas/OrderItem"
+        },
+        "name": "pageSorts",
+        "desc": "排序",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "SysDepartmentQueryVo",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "string",
+        "description": "创建时间",
+        "format": "date-time",
+        "name": "createTime",
+        "desc": "创建时间",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "主键",
+        "name": "id",
+        "desc": "主键",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "部门名称",
+        "name": "name",
+        "desc": "部门名称",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "父id",
+        "name": "parentId",
+        "desc": "父id",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "备注",
+        "name": "remark",
+        "desc": "备注",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "排序",
+        "format": "int32",
+        "name": "sort",
+        "desc": "排序",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "状态，0：禁用，1：启用",
+        "format": "int32",
+        "name": "state",
+        "desc": "状态，0：禁用，1：启用",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "修改时间",
+        "format": "date-time",
+        "name": "updateTime",
+        "desc": "修改时间",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "版本",
+        "format": "int32",
+        "name": "version",
+        "desc": "版本",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "SysDepartmentTreeVo",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "SysDepartmentTreeVo[]",
+        "items": {
+          "$ref": "#/components/schemas/SysDepartmentTreeVo"
+        },
+        "name": "children",
+        "desc": "",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "创建时间",
+        "format": "date-time",
+        "name": "createTime",
+        "desc": "创建时间",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "主键",
+        "name": "id",
+        "desc": "主键",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "部门名称",
+        "name": "name",
+        "desc": "部门名称",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "父id",
+        "name": "parentId",
+        "desc": "父id",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "备注",
+        "name": "remark",
+        "desc": "备注",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "排序",
+        "format": "int32",
+        "name": "sort",
+        "desc": "排序",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "状态，0：禁用，1：启用",
+        "format": "int32",
+        "name": "state",
+        "desc": "状态，0：禁用，1：启用",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "修改时间",
+        "format": "date-time",
+        "name": "updateTime",
+        "desc": "修改时间",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "版本",
+        "format": "int32",
+        "name": "version",
+        "desc": "版本",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "SysLoginLog",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "string",
+        "description": "区域",
+        "name": "area",
+        "desc": "区域",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "浏览器名称",
+        "name": "browserName",
+        "desc": "浏览器名称",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "浏览器版本",
+        "name": "browserVersion",
+        "desc": "浏览器版本",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "响应码",
+        "format": "int32",
+        "name": "code",
+        "desc": "响应码",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "创建时间",
+        "format": "date-time",
+        "name": "createTime",
+        "desc": "创建时间",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "移动端设备型号",
+        "name": "deviceModel",
+        "desc": "移动端设备型号",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "移动端设备名称",
+        "name": "deviceName",
+        "desc": "移动端设备名称",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "浏览器引擎名称",
+        "name": "engineName",
+        "desc": "浏览器引擎名称",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "浏览器引擎版本",
+        "name": "engineVersion",
+        "desc": "浏览器引擎版本",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "失败消息记录",
+        "name": "exceptionMessage",
+        "desc": "失败消息记录",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "主键",
+        "format": "int64",
+        "name": "id",
+        "desc": "主键",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "IP",
+        "name": "ip",
+        "desc": "IP",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "description": "是否是手机,0:否,1:是",
+        "example": false,
+        "name": "mobile",
+        "desc": "是否是手机,0:否,1:是",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "运营商",
+        "name": "operator",
+        "desc": "运营商",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "系统名称",
+        "name": "osName",
+        "desc": "系统名称",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "平台名称",
+        "name": "platformName",
+        "desc": "平台名称",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "备注",
+        "name": "remark",
+        "desc": "备注",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "请求ID",
+        "name": "requestId",
+        "desc": "请求ID",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "description": "是否成功 true:成功/false:失败",
+        "example": false,
+        "name": "success",
+        "desc": "是否成功 true:成功/false:失败",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "tokenMd5值",
+        "name": "token",
+        "desc": "tokenMd5值",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "1:登录，2：登出",
+        "format": "int32",
+        "name": "type",
+        "desc": "1:登录，2：登出",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "修改时间",
+        "format": "date-time",
+        "name": "updateTime",
+        "desc": "修改时间",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "浏览器名称",
+        "name": "userAgent",
+        "desc": "浏览器名称",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "用户名称",
+        "name": "username",
+        "desc": "用户名称",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "SysLoginLogPageParam",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "string",
+        "description": "搜索字符串",
+        "name": "keyword",
+        "desc": "搜索字符串",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "页码,默认为1",
+        "format": "int64",
+        "example": 1,
+        "name": "pageIndex",
+        "desc": "页码,默认为1",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "页大小,默认为10",
+        "format": "int64",
+        "example": 10,
+        "name": "pageSize",
+        "desc": "页大小,默认为10",
+        "required": false
+      },
+      {
+        "type": "OrderItem[]",
+        "description": "排序",
+        "items": {
+          "$ref": "#/components/schemas/OrderItem"
+        },
+        "name": "pageSorts",
+        "desc": "排序",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "SysOperationLog",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "string",
+        "description": "区域",
+        "name": "area",
+        "desc": "区域",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "浏览器名称",
+        "name": "browserName",
+        "desc": "浏览器名称",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "浏览器版本",
+        "name": "browserVersion",
+        "desc": "浏览器版本",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "类名",
+        "name": "className",
+        "desc": "类名",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "响应结果状态码",
+        "format": "int32",
+        "name": "code",
+        "desc": "响应结果状态码",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "内容类型",
+        "name": "contentType",
+        "desc": "内容类型",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "创建时间",
+        "format": "date-time",
+        "name": "createTime",
+        "desc": "创建时间",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "移动端设备型号",
+        "name": "deviceModel",
+        "desc": "移动端设备型号",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "移动端设备名称",
+        "name": "deviceName",
+        "desc": "移动端设备名称",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "浏览器引擎名称",
+        "name": "engineName",
+        "desc": "浏览器引擎名称",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "浏览器引擎版本",
+        "name": "engineVersion",
+        "desc": "浏览器引擎版本",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "异常信息",
+        "name": "exceptionMessage",
+        "desc": "异常信息",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "异常类名称",
+        "name": "exceptionName",
+        "desc": "异常类名称",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "主键",
+        "format": "int64",
+        "name": "id",
+        "desc": "主键",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "IP",
+        "name": "ip",
+        "desc": "IP",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "响应结果消息",
+        "name": "message",
+        "desc": "响应结果消息",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "方法名称",
+        "name": "methodName",
+        "desc": "方法名称",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "description": "是否是手机,0:否,1:是",
+        "example": false,
+        "name": "mobile",
+        "desc": "是否是手机,0:否,1:是",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "模块名称",
+        "name": "module",
+        "desc": "模块名称",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "日志名称",
+        "name": "name",
+        "desc": "日志名称",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "运营商",
+        "name": "operator",
+        "desc": "运营商",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "系统名称",
+        "name": "osName",
+        "desc": "系统名称",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "请求参数",
+        "name": "param",
+        "desc": "请求参数",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "全路径",
+        "name": "path",
+        "desc": "全路径",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "平台名称",
+        "name": "platformName",
+        "desc": "平台名称",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "备注",
+        "name": "remark",
+        "desc": "备注",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "description": "是否是JSON请求映射参数",
+        "example": false,
+        "name": "requestBody",
+        "desc": "是否是JSON请求映射参数",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "请求ID",
+        "name": "requestId",
+        "desc": "请求ID",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "请求方式，GET/POST",
+        "name": "requestMethod",
+        "desc": "请求方式，GET/POST",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "description": "0:失败,1:成功",
+        "example": false,
+        "name": "success",
+        "desc": "0:失败,1:成功",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "tokenMd5值",
+        "name": "token",
+        "desc": "tokenMd5值",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "0:其它,1:新增,2:修改,3:删除,4:详情查询,5:所有列表,6:分页列表,7:其它查询,8:上传文件",
+        "format": "int32",
+        "name": "type",
+        "desc": "0:其它,1:新增,2:修改,3:删除,4:详情查询,5:所有列表,6:分页列表,7:其它查询,8:上传文件",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "修改时间",
+        "format": "date-time",
+        "name": "updateTime",
+        "desc": "修改时间",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "用户ID",
+        "format": "int64",
+        "name": "userId",
+        "desc": "用户ID",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "用户名称",
+        "name": "userName",
+        "desc": "用户名称",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "SysOperationLogPageParam",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "string",
+        "description": "搜索字符串",
+        "name": "keyword",
+        "desc": "搜索字符串",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "页码,默认为1",
+        "format": "int64",
+        "example": 1,
+        "name": "pageIndex",
+        "desc": "页码,默认为1",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "页大小,默认为10",
+        "format": "int64",
+        "example": 10,
+        "name": "pageSize",
+        "desc": "页大小,默认为10",
+        "required": false
+      },
+      {
+        "type": "OrderItem[]",
+        "description": "排序",
+        "items": {
+          "$ref": "#/components/schemas/OrderItem"
+        },
+        "name": "pageSorts",
+        "desc": "排序",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "SysPermission",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "string",
+        "description": "唯一编码",
+        "name": "code",
+        "desc": "唯一编码",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "创建人用户id",
+        "format": "int64",
+        "name": "createBy",
+        "desc": "创建人用户id",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "创建时间",
+        "format": "date-time",
+        "name": "createTime",
+        "desc": "创建时间",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "description": "逻辑删除，0：未删除，1：已删除",
+        "example": false,
+        "name": "deleted",
+        "desc": "逻辑删除，0：未删除，1：已删除",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "图标",
+        "name": "icon",
+        "desc": "图标",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "主键",
+        "format": "int64",
+        "name": "id",
+        "desc": "主键",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "层级，1：第一级，2：第二级，N：第N级",
+        "format": "int32",
+        "name": "level",
+        "desc": "层级，1：第一级，2：第二级，N：第N级",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "权限名称",
+        "name": "name",
+        "desc": "权限名称",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "父id",
+        "format": "int64",
+        "name": "parentId",
+        "desc": "父id",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "备注",
+        "name": "remark",
+        "desc": "备注",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "排序",
+        "format": "int32",
+        "name": "sort",
+        "desc": "排序",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "状态，0：禁用，1：启用",
+        "format": "int32",
+        "name": "state",
+        "desc": "状态，0：禁用，1：启用",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "类型，1：菜单，2：按钮",
+        "format": "int32",
+        "name": "type",
+        "desc": "类型，1：菜单，2：按钮",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "修改人用户id",
+        "format": "int64",
+        "name": "updateBy",
+        "desc": "修改人用户id",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "修改时间",
+        "format": "date-time",
+        "name": "updateTime",
+        "desc": "修改时间",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "路径",
+        "name": "url",
+        "desc": "路径",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "版本",
+        "format": "int32",
+        "name": "version",
+        "desc": "版本",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "SysPermissionPageParam",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "string",
+        "description": "搜索字符串",
+        "name": "keyword",
+        "desc": "搜索字符串",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "页码,默认为1",
+        "format": "int64",
+        "example": 1,
+        "name": "pageIndex",
+        "desc": "页码,默认为1",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "页大小,默认为10",
+        "format": "int64",
+        "example": 10,
+        "name": "pageSize",
+        "desc": "页大小,默认为10",
+        "required": false
+      },
+      {
+        "type": "OrderItem[]",
+        "description": "排序",
+        "items": {
+          "$ref": "#/components/schemas/OrderItem"
+        },
+        "name": "pageSorts",
+        "desc": "排序",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "SysPermissionQueryVo",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "string",
+        "description": "唯一编码",
+        "name": "code",
+        "desc": "唯一编码",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "创建时间",
+        "format": "date-time",
+        "name": "createTime",
+        "desc": "创建时间",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "图标",
+        "name": "icon",
+        "desc": "图标",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "主键",
+        "name": "id",
+        "desc": "主键",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "层级，1：第一级，2：第二级，N：第N级",
+        "format": "int32",
+        "name": "level",
+        "desc": "层级，1：第一级，2：第二级，N：第N级",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "权限名称",
+        "name": "name",
+        "desc": "权限名称",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "父id",
+        "name": "parentId",
+        "desc": "父id",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "备注",
+        "name": "remark",
+        "desc": "备注",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "排序",
+        "format": "int32",
+        "name": "sort",
+        "desc": "排序",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "状态，0：禁用，1：启用",
+        "format": "int32",
+        "name": "state",
+        "desc": "状态，0：禁用，1：启用",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "类型，1：菜单，2：按钮",
+        "format": "int32",
+        "name": "type",
+        "desc": "类型，1：菜单，2：按钮",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "修改时间",
+        "format": "date-time",
+        "name": "updateTime",
+        "desc": "修改时间",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "路径",
+        "name": "url",
+        "desc": "路径",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "版本",
+        "format": "int32",
+        "name": "version",
+        "desc": "版本",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "SysPermissionTreeVo",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "SysPermissionTreeVo[]",
+        "description": "子节点集合",
+        "items": {
+          "$ref": "#/components/schemas/SysPermissionTreeVo"
+        },
+        "name": "children",
+        "desc": "子节点集合",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "唯一编码",
+        "name": "code",
+        "desc": "唯一编码",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "创建时间",
+        "format": "date-time",
+        "name": "createTime",
+        "desc": "创建时间",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "图标",
+        "name": "icon",
+        "desc": "图标",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "主键",
+        "name": "id",
+        "desc": "主键",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "层级，1：第一级，2：第二级，N：第N级",
+        "format": "int32",
+        "name": "level",
+        "desc": "层级，1：第一级，2：第二级，N：第N级",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "权限名称",
+        "name": "name",
+        "desc": "权限名称",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "父id",
+        "name": "parentId",
+        "desc": "父id",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "备注",
+        "name": "remark",
+        "desc": "备注",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "排序",
+        "format": "int32",
+        "name": "sort",
+        "desc": "排序",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "状态，0：禁用，1：启用",
+        "format": "int32",
+        "name": "state",
+        "desc": "状态，0：禁用，1：启用",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "类型，1：菜单，2：按钮",
+        "format": "int32",
+        "name": "type",
+        "desc": "类型，1：菜单，2：按钮",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "修改时间",
+        "format": "date-time",
+        "name": "updateTime",
+        "desc": "修改时间",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "路径",
+        "name": "url",
+        "desc": "路径",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "版本",
+        "format": "int32",
+        "name": "version",
+        "desc": "版本",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "SysRole",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "string",
+        "description": "角色唯一编码",
+        "name": "code",
+        "desc": "角色唯一编码",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "创建人用户id",
+        "format": "int64",
+        "name": "createBy",
+        "desc": "创建人用户id",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "创建时间",
+        "format": "date-time",
+        "name": "createTime",
+        "desc": "创建时间",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "description": "逻辑删除，0：未删除，1：已删除",
+        "example": false,
+        "name": "deleted",
+        "desc": "逻辑删除，0：未删除，1：已删除",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "主键",
+        "format": "int64",
+        "name": "id",
+        "desc": "主键",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "角色名称",
+        "name": "name",
+        "desc": "角色名称",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "备注",
+        "name": "remark",
+        "desc": "备注",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "角色状态，0：禁用，1：启用",
+        "format": "int32",
+        "name": "state",
+        "desc": "角色状态，0：禁用，1：启用",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "角色类型",
+        "format": "int32",
+        "name": "type",
+        "desc": "角色类型",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "修改人用户id",
+        "format": "int64",
+        "name": "updateBy",
+        "desc": "修改人用户id",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "修改时间",
+        "format": "date-time",
+        "name": "updateTime",
+        "desc": "修改时间",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "版本",
+        "format": "int32",
+        "name": "version",
+        "desc": "版本",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "SysRolePageParam",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "string",
+        "description": "角色编码",
+        "name": "code",
+        "desc": "角色编码",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "搜索字符串",
+        "name": "keyword",
+        "desc": "搜索字符串",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "角色名称",
+        "name": "name",
+        "desc": "角色名称",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "页码,默认为1",
+        "format": "int64",
+        "example": 1,
+        "name": "pageIndex",
+        "desc": "页码,默认为1",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "页大小,默认为10",
+        "format": "int64",
+        "example": 10,
+        "name": "pageSize",
+        "desc": "页大小,默认为10",
+        "required": false
+      },
+      {
+        "type": "OrderItem[]",
+        "description": "排序",
+        "items": {
+          "$ref": "#/components/schemas/OrderItem"
+        },
+        "name": "pageSorts",
+        "desc": "排序",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "角色状态，0：禁用，1：启用",
+        "format": "int32",
+        "name": "state",
+        "desc": "角色状态，0：禁用，1：启用",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "SysUser",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number",
+        "description": "创建人用户id",
+        "format": "int64",
+        "name": "createBy",
+        "desc": "创建人用户id",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "创建时间",
+        "format": "date-time",
+        "name": "createTime",
+        "desc": "创建时间",
+        "required": false
+      },
+      {
+        "type": "boolean",
+        "description": "逻辑删除，0：未删除，1：已删除",
+        "example": false,
+        "name": "deleted",
+        "desc": "逻辑删除，0：未删除，1：已删除",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "部门id",
+        "format": "int64",
+        "name": "departmentId",
+        "desc": "部门id",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "性别，0：女，1：男，默认1",
+        "format": "int32",
+        "name": "gender",
+        "desc": "性别，0：女，1：男，默认1",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "头像",
+        "name": "head",
+        "desc": "头像",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "主键",
+        "format": "int64",
+        "name": "id",
+        "desc": "主键",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "昵称",
+        "name": "nickname",
+        "desc": "昵称",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "密码",
+        "name": "password",
+        "desc": "密码",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "手机号码",
+        "name": "phone",
+        "desc": "手机号码",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "备注",
+        "name": "remark",
+        "desc": "备注",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "角色id",
+        "format": "int64",
+        "name": "roleId",
+        "desc": "角色id",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "盐值",
+        "name": "salt",
+        "desc": "盐值",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "状态，0：禁用，1：启用，2：锁定",
+        "format": "int32",
+        "name": "state",
+        "desc": "状态，0：禁用，1：启用，2：锁定",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "修改人用户id",
+        "format": "int64",
+        "name": "updateBy",
+        "desc": "修改人用户id",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "修改时间",
+        "format": "date-time",
+        "name": "updateTime",
+        "desc": "修改时间",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "用户名",
+        "name": "username",
+        "desc": "用户名",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "版本",
+        "format": "int32",
+        "name": "version",
+        "desc": "版本",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "SysUserPageParam",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "string",
+        "description": "创建时间结束",
+        "format": "date-time",
+        "name": "createTimeEnd",
+        "desc": "创建时间结束",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "创建时间开始",
+        "format": "date-time",
+        "name": "createTimeStart",
+        "desc": "创建时间开始",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "部门id",
+        "name": "departmentId",
+        "desc": "部门id",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "搜索字符串",
+        "name": "keyword",
+        "desc": "搜索字符串",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "昵称",
+        "name": "nickname",
+        "desc": "昵称",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "页码,默认为1",
+        "format": "int64",
+        "example": 1,
+        "name": "pageIndex",
+        "desc": "页码,默认为1",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "页大小,默认为10",
+        "format": "int64",
+        "example": 10,
+        "name": "pageSize",
+        "desc": "页大小,默认为10",
+        "required": false
+      },
+      {
+        "type": "OrderItem[]",
+        "description": "排序",
+        "items": {
+          "$ref": "#/components/schemas/OrderItem"
+        },
+        "name": "pageSorts",
+        "desc": "排序",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "角色id",
+        "name": "roleId",
+        "desc": "角色id",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "状态，0：禁用，1：启用，2：锁定",
+        "format": "int32",
+        "name": "state",
+        "desc": "状态，0：禁用，1：启用，2：锁定",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "用户名",
+        "name": "username",
+        "desc": "用户名",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "SysUserQueryVo",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "string",
+        "description": "创建时间",
+        "format": "date-time",
+        "name": "createTime",
+        "desc": "创建时间",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "逻辑删除，0：未删除，1：已删除",
+        "format": "int32",
+        "name": "deleted",
+        "desc": "逻辑删除，0：未删除，1：已删除",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "部门id",
+        "name": "departmentId",
+        "desc": "部门id",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "部门名称",
+        "name": "departmentName",
+        "desc": "部门名称",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "性别，0：女，1：男，默认1",
+        "format": "int32",
+        "name": "gender",
+        "desc": "性别，0：女，1：男，默认1",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "头像",
+        "name": "head",
+        "desc": "头像",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "主键",
+        "name": "id",
+        "desc": "主键",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "昵称",
+        "name": "nickname",
+        "desc": "昵称",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "手机号码",
+        "name": "phone",
+        "desc": "手机号码",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "remark",
+        "name": "remark",
+        "desc": "remark",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "角色id",
+        "name": "roleId",
+        "desc": "角色id",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "角色名称",
+        "name": "roleName",
+        "desc": "角色名称",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "状态，0：禁用，1：启用，2：锁定",
+        "format": "int32",
+        "name": "state",
+        "desc": "状态，0：禁用，1：启用，2：锁定",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "修改时间",
+        "format": "date-time",
+        "name": "updateTime",
+        "desc": "修改时间",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "用户名",
+        "name": "username",
+        "desc": "用户名",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "版本",
+        "format": "int32",
+        "name": "version",
+        "desc": "版本",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "UpdatePasswordParam",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "string",
+        "description": "新密码",
+        "name": "confirmPassword",
+        "desc": "新密码",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "新密码",
+        "name": "newPassword",
+        "desc": "新密码",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "原密码",
+        "name": "oldPassword",
+        "desc": "原密码",
+        "required": false
+      },
+      {
+        "type": "string",
+        "description": "用户id",
+        "name": "userId",
+        "desc": "用户id",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "UpdateSysRolePermissionParam",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "number[]",
+        "description": "权限ID集合",
+        "items": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": "permissionIds",
+        "desc": "权限ID集合",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "角色ID",
+        "format": "int64",
+        "name": "roleId",
+        "desc": "角色ID",
+        "required": false
+      }
+    ]
+  },
+  {
+    "typeName": "UploadHeadParam",
+    "type": "Record<string, any>",
+    "props": [
+      {
+        "type": "string",
+        "description": "头像路径",
+        "name": "head",
+        "desc": "头像路径",
+        "required": false
+      },
+      {
+        "type": "number",
+        "description": "用户ID",
+        "format": "int64",
+        "name": "id",
+        "desc": "用户ID",
+        "required": false
+      }
+    ]
+  }
+]
