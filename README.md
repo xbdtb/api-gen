@@ -27,6 +27,7 @@ module.exports = {
 
 ## Run
 ``` javascript
+// generate.js
 const { generateByConfig } = require('@xbdtb/api-gen');
 const config = require(__dirname + '/config.js');
 
