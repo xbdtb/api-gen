@@ -363,7 +363,7 @@ class ServiceGenerator {
       disableTypeCheck: false,
     });
 
-    writeFileSync(path.join(this.finalPath, ".fullTypes.json"), JSON.stringify(allTypes, null, 2), {encoding: 'utf8',});
+    writeFileSync(path.join(this.finalPath, ".fullTypes.js"), JSON.stringify(allTypes, null, 2), {encoding: 'utf8',});
 
     // 打印日志
     Log(`✅ 成功生成 service 文件`);
