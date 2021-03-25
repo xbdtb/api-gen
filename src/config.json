@@ -1,6 +1,7 @@
 {
   "cms": {
     "schemaPath": "http://uat-fuse-cms-api.zhcs.csbtv.com/api/cms/v3/api-docs",
+    "serversPath": "./src/services",
     "excludeServices": ["index", "config", "enum", "webMvcLinksHandler", "operationHandler"],
     "customTypes": {
       "ApiResult": {

@@ -126,7 +126,7 @@ export const generateService = async ({
 
 export function generateByConfig(config) {
   Object.keys(config).forEach((key) => {
-      const { requestLibPath, schemaPath, mockFolder, excludeServices, customTypes } = config[key];
-      generateService({ requestLibPath, schemaPath, projectName: key, namespace: key, mockFolder}, excludeServices, customTypes);
+      const { requestLibPath, serversPath, schemaPath, mockFolder, excludeServices, customTypes } = config[key];
+      generateService({ requestLibPath, serversPath, schemaPath, projectName: key, namespace: key, mockFolder}, excludeServices, customTypes);
   });
 }
