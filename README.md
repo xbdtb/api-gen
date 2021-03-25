@@ -7,8 +7,7 @@ npm install @xbdtb/api-gen --dev
 yarn add @xbdtb/api-gen --dev
 ```
 
-## Usage
-### configuration
+## Configuration
 ``` javascript
 # config.js
 module.exports = {
@@ -26,7 +25,7 @@ module.exports = {
 };
 ```
 
-### run
+## Run
 ``` javascript
 const { generateByConfig } = require('@xbdtb/api-gen');
 const config = require(__dirname + '/config.js');
