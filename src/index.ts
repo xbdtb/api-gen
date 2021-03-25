@@ -74,10 +74,15 @@ const converterSwaggerToOpenApi = (swagger: any) => {
 
 export const getSchema = async (schemaPath: string) => {
   if (schemaPath.startsWith('http')) {
-    const json = await fetch(schemaPath).then((rest) => rest.json());
-    return json;
+    const response = await fetch(schemaPath);
+    let text = await response.text();
+    text = text.replace(/«/g, '<');
+    text = text.replace(/»/g, '>');
+    return JSON.parse(text);
   }
-  const schema = require(schemaPath);
+  let schema = require(schemaPath);
+  schema = schema.replace(/«/g, '<');
+  schema = schema.replace(/»/g, '>');
   return schema;
 };
 
@@ -96,18 +101,18 @@ export const generateService = async ({
   schemaPath,
   mockFolder,
   ...rest
-}: GenerateServiceProps) => {
+}: GenerateServiceProps, excludeServices: any = [], customTypes: any = {}) => {
   const openAPI = await getOpenAPIConfig(schemaPath);
   const requestImportStatement = getImportStatement(requestLibPath);
   const serviceGenerator = new ServiceGenerator(
     {
-      namespace: 'API',
+      // namespace: 'API',
       requestImportStatement,
       ...rest,
     },
     openAPI,
   );
-  serviceGenerator.genFile();
+  serviceGenerator.genFile(excludeServices, customTypes);
 
   if (mockFolder) {
     await mockGenerator({
@@ -118,3 +123,10 @@ export const generateService = async ({
 
   process.exit();
 };
+
+export function generateByConfig(config) {
+  Object.keys(config).forEach((key) => {
+      const { requestLibPath, schemaPath, mockFolder, excludeServices, customTypes } = config[key];
+      generateService({ requestLibPath, schemaPath, projectName: key, namespace: key, mockFolder}, excludeServices, customTypes);
+  });
+}

@@ -1,4 +1,4 @@
-import { readFileSync, existsSync } from 'fs';
+import { readFileSync, existsSync, writeFileSync } from 'fs';
 import * as nunjucks from 'nunjucks';
 import glob from 'glob';
 import rimraf from 'rimraf';
@@ -16,8 +16,9 @@ import type {
 } from 'openapi3-ts';
 import { flatten, uniqBy } from 'lodash';
 import ReservedDict from 'reserved-words';
-import { join } from 'path';
+import path, { join } from 'path';
 import Log from './log';
+import { parse } from 'java-ast';
 
 import { writeFile, stripDot } from './util';
 import type { GenerateServiceProps } from './index';
@@ -66,6 +67,40 @@ function getRefName(refObject: any): string {
   return resolveTypeName(refPaths[refPaths.length - 1]) as string;
 }
 
+function resolveNamespace(source: string, namespace) {
+  const wordsMap = {
+    'int64': 'number',
+    'integer': 'number',
+    'long': 'number',
+    'float': 'number',
+    'double': 'number',
+    'number': 'number',
+    'int': 'number',
+    'int32': 'number',
+    '<': '<',
+    '>': '>',
+    ',': ', ',
+    'string': 'string',
+    'boolean': 'boolean',
+    'List': 'Array',
+    'Map': 'Map',
+  };
+  const ast = parse(source);
+  let resultTypeName = '';
+  ast.children.forEach((item) => {
+    let {text} = item;
+    if (text && text !== '<EOF>') {
+      if (wordsMap[text]) {
+        text = wordsMap[text];
+      } else if (namespace) {
+        text = `${namespace}.${text}`;
+      }
+      resultTypeName = `${resultTypeName}${text}`;
+    }
+  });
+  return resultTypeName;
+};
+
 const getType = (schemaObject: SchemaObject | undefined, namespace: string = ''): string => {
   if (schemaObject === undefined || schemaObject === null) {
     return 'any';
@@ -74,7 +109,10 @@ const getType = (schemaObject: SchemaObject | undefined, namespace: string = '')
     return schemaObject;
   }
   if (schemaObject.$ref) {
-    return [namespace, getRefName(schemaObject)].filter((s) => s).join('.');
+    const refName = getRefName(schemaObject);
+    const finalRefName = resolveNamespace(refName, namespace);
+    return finalRefName;
+    // return [namespace, finalRefName].filter((s) => s).join('.');
   }
 
   let { type } = schemaObject as any;
@@ -108,7 +146,7 @@ const getType = (schemaObject: SchemaObject | undefined, namespace: string = '')
   if (numberEnum.includes(type)) {
     return 'number';
   }
-
+  // console.log(type);
   if (dateEnum.includes(type)) {
     return 'Date';
   }
@@ -141,7 +179,7 @@ const getType = (schemaObject: SchemaObject | undefined, namespace: string = '')
       ? Array.from(
           new Set(
             schemaObject.enum.map((v) =>
-              typeof v === 'string' ? `"${v.replace(/"/g, '"')}"` : getType(v),
+              typeof v === 'string' ? `"${v.replace(/"/g, '"')}"` : getType(v, namespace),
             ),
           ),
         ).join(' | ')
@@ -255,7 +293,7 @@ class ServiceGenerator {
     });
   }
 
-  public genFile() {
+  public genFile(excludeServices: any = [], customTypes: any = {}) {
     const basePath = this.config.serversPath || './src/service';
     try {
       const finalPath = join(basePath, this.config.projectName);
@@ -271,17 +309,35 @@ class ServiceGenerator {
       Log(`🚥 serves 生成失败: ${error}`);
     }
 
+    const allTypes = this.getInterfaceTP()
+    const types = allTypes.filter((item) => item.typeName.indexOf('<') < 0);
+    const keys = Object.keys(customTypes);
+    for (let i = 0; i < keys.length; i += 1) {
+      let exists = false;
+      for (let j = 0; j < types.length; j += 1) {
+        if (keys[i] === types[j].typeName) {
+          types[j] = customTypes[keys[i]];
+          exists = true;
+          break;
+        }
+      };
+      if (!exists) {
+        types.push(customTypes[keys[i]]);
+      }
+    }
+
     // 生成 ts 类型声明
     this.genFileFromTemplate('typings.d.ts', 'interface', {
       namespace: this.config.namespace,
       // namespace: 'API',
-      list: this.getInterfaceTP(),
+      list: types,
       disableTypeCheck: false,
     });
     // 生成 controller 文件
     const prettierError = [];
     // 生成 service 统计
-    this.getServiceTP().forEach((tp) => {
+    const services = this.getServiceTP().filter((item) => !excludeServices.includes(item.className));
+    services.forEach((tp) => {
       // 根据当前数据源类型选择恰当的 controller 模版
       const template = 'serviceController';
       const hasError = this.genFileFromTemplate(
@@ -301,10 +357,13 @@ class ServiceGenerator {
       Log(`🚥 格式化失败，请检查 service 文件内可能存在的语法错误`);
     }
     // 生成 index 文件
+    const classNames = this.classNameList.filter((item) => !excludeServices.includes(item.fileName))
     this.genFileFromTemplate(`index.ts`, 'serviceIndex', {
-      list: this.classNameList,
+      list: classNames,
       disableTypeCheck: false,
     });
+
+    writeFileSync(path.join(this.finalPath, ".fullTypes.json"), JSON.stringify(allTypes, null, 2), {encoding: 'utf8',});
 
     // 打印日志
     Log(`✅ 成功生成 service 文件`);
@@ -316,11 +375,10 @@ class ServiceGenerator {
         // functionName tag 级别防重
         const tmpFunctionRD: Record<string, number> = {};
         const genParams = this.apiData[tag]
-          .filter(
-            (api) =>
-              // 暂不支持变量
-              !api.path.includes('${'),
-          )
+          .filter((api) => {
+            // 暂不支持变量
+            return !api.path.includes('${') && !api.path.includes('{');;
+          })
           .map((api) => {
             const newApi = api;
             try {
@@ -696,7 +754,7 @@ class ServiceGenerator {
 
     const enumStr = Array.from(
       new Set(
-        enumArray.map((v) => (typeof v === 'string' ? `"${v.replace(/"/g, '"')}"` : getType(v))),
+        enumArray.map((v) => (typeof v === 'string' ? `"${v.replace(/"/g, '"')}"` : getType(v, this.config.namespace))),
       ),
     ).join(' | ');
     return {
@@ -707,7 +765,7 @@ class ServiceGenerator {
   resolveAllOfObject(schemaObject: SchemaObject) {
     const allOf = schemaObject.allOf || [];
     // 暂时只支持单继承，且父类必须是第一个元素
-    const parent = allOf[0] && allOf[0].$ref ? getType(allOf[0]) : undefined;
+    const parent = allOf[0] && allOf[0].$ref ? getType(allOf[0], this.config.namespace) : undefined;
     let props: any[] = [];
     if (allOf.length > 1) {
       props = flatten(allOf.slice(1).map((item) => this.getProps(item)));
