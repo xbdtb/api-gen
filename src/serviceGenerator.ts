@@ -84,6 +84,7 @@ function resolveNamespace(source: string, namespace) {
     'boolean': 'boolean',
     'List': 'Array',
     'Map': 'Map',
+    'object': 'Object',
   };
   const ast = parse(source);
   let resultTypeName = '';
