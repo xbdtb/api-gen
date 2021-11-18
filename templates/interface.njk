@@ -4,7 +4,11 @@
 declare namespace {{ namespace }} {
   {% for type in list -%}
 {%- if type.props.length %}
-  type {{ type.typeName | safe }}{{ '' if type.parent === undefined else ' extends ' + type.parent }} = {
+  {%- if type.parent === undefined %}
+  interface {{ type.typeName | safe }} {
+  {%- else %}
+  interface {{ type.typeName | safe }} extends {{ type.parent }} {
+  {%- endif %}
     {%- for prop in type.props %}
     {%- if prop.desc %}
     /** {{ prop.desc }} */
@@ -14,7 +18,7 @@ declare namespace {{ namespace }} {
     {%- endfor %}
   }
 {%- else %}
-  type {{ type.typeName | safe }} = {{ type.type }};
+  interface {{ type.typeName | safe }} {{ type.type }};
 {%- endif %}
 {% endfor %}
 }

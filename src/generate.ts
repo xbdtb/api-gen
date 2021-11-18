@@ -1,6 +1,6 @@
 import { generateByConfig } from './index';
 
-const config = require('../src/config.json');
+const config = require('./config');
 
 generateByConfig(config);
 
