@@ -5,7 +5,7 @@ declare namespace {{ namespace }} {
   {% for type in list -%}
 {%- if type.props.length %}
   {%- if type.parent === undefined %}
-  interface {{ type.typeName | safe }} {
+  type {{ type.typeName | safe }} = {
   {%- else %}
   interface {{ type.typeName | safe }} extends {{ type.parent }} {
   {%- endif %}
@@ -18,7 +18,7 @@ declare namespace {{ namespace }} {
     {%- endfor %}
   }
 {%- else %}
-  interface {{ type.typeName | safe }} {{ type.type }};
+  type {{ type.typeName | safe }} = {{ type.type }};
 {%- endif %}
 {% endfor %}
 }
