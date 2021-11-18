@@ -1,6 +1,6 @@
 {
   "name": "@xbdtb/api-gen",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "generate client code from openapi document",
   "license": "MIT",
   "author": "xbdtb",
