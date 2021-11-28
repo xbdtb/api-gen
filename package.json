@@ -23,7 +23,7 @@
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build && np --no-cleanup --yolo --no-publish --any-branch",
-    "start": "tsc -w"
+    "start": "tsc -w --sourceMap"
   },
   "dependencies": {
     "@umijs/fabric": "^2.5.6",

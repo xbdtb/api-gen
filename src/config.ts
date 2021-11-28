@@ -108,12 +108,17 @@ const customTypes = {
 };
 
 module.exports = {
-  api: {
-    schemaPath: 'https://gw.alipayobjects.com/os/antfincdn/M%24jrzTTYJN/oneapi.json',
-    serversPath,
-  },
-  venus: {
-    schemaPath: 'http://localhost:8890/api/venus/v3/api-docs',
+  // api: {
+  //   schemaPath: 'https://gw.alipayobjects.com/os/antfincdn/M%24jrzTTYJN/oneapi.json',
+  //   serversPath,
+  // },
+  // venus: {
+  //   schemaPath: 'http://localhost:8890/api/venus/v3/api-docs',
+  //   serversPath,
+  //   customTypes,
+  // },
+  cms: {
+    schemaPath: 'http://localhost:8889/api/cms/v3/api-docs',
     serversPath,
     customTypes,
   },

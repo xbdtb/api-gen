@@ -192,7 +192,8 @@ const getType = (schemaObject: SchemaObject | undefined, namespace: string = '')
   }
   if (schemaObject.type === 'object' || schemaObject.properties) {
     if (!Object.keys(schemaObject.properties || {}).length) {
-      return 'Record<string, any>';
+      // return 'Record<string, any>';
+      return 'any';
     }
     return `{ ${Object.keys(schemaObject.properties)
       .map((key) => {
@@ -657,7 +658,8 @@ class ServiceGenerator {
             if (result.type) {
               return (defines[typeName] as SchemaObject).type === 'object' || result.type;
             }
-            return 'Record<string, any>';
+            // return 'Record<string, any>';
+            return 'any';
           };
           return {
             typeName: resolveTypeName(typeName),
