@@ -101,7 +101,7 @@ export const generateService = async ({
   schemaPath,
   mockFolder,
   ...rest
-}: GenerateServiceProps, excludeServices: any = [], customTypes: any = {}) => {
+}: GenerateServiceProps, includeServices: any = [], excludeServices: any = [], customTypes: any = {}) => {
   const openAPI = await getOpenAPIConfig(schemaPath);
   const requestImportStatement = getImportStatement(requestLibPath);
   const serviceGenerator = new ServiceGenerator(
@@ -112,7 +112,7 @@ export const generateService = async ({
     },
     openAPI,
   );
-  serviceGenerator.genFile(excludeServices, customTypes);
+  serviceGenerator.genFile(includeServices, excludeServices, customTypes);
 
   if (mockFolder) {
     await mockGenerator({
@@ -126,8 +126,8 @@ export async function generateByConfig(config) {
   const keys = Object.keys(config);
   for (let i = 0; i < keys.length; i += 1) {
     const key = keys[i];
-    const { requestLibPath, serversPath, schemaPath, mockFolder, excludeServices, customTypes } = config[key];
+    const { requestLibPath, serversPath, schemaPath, mockFolder, includeServices, excludeServices, customTypes } = config[key];
     // eslint-disable-next-line no-await-in-loop
-    await generateService({ requestLibPath, serversPath, schemaPath, projectName: key, namespace: key, mockFolder}, excludeServices, customTypes);
+    await generateService({ requestLibPath, serversPath, schemaPath, projectName: key, namespace: key, mockFolder}, includeServices, excludeServices, customTypes);
   }
 }

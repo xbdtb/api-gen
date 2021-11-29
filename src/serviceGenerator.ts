@@ -89,7 +89,7 @@ function resolveNamespace(source: string, namespace) {
   const ast = parse(source);
   let resultTypeName = '';
   ast.children.forEach((item) => {
-    let {text} = item;
+    let { text } = item;
     if (text && text !== '<EOF>') {
       if (wordsMap[text]) {
         text = wordsMap[text];
@@ -178,12 +178,12 @@ const getType = (schemaObject: SchemaObject | undefined, namespace: string = '')
   if (type === 'enum') {
     return Array.isArray(schemaObject.enum)
       ? Array.from(
-          new Set(
-            schemaObject.enum.map((v) =>
-              typeof v === 'string' ? `"${v.replace(/"/g, '"')}"` : getType(v, namespace),
-            ),
+        new Set(
+          schemaObject.enum.map((v) =>
+            typeof v === 'string' ? `"${v.replace(/"/g, '"')}"` : getType(v, namespace),
           ),
-        ).join(' | ')
+        ),
+      ).join(' | ')
       : 'string';
   }
 
@@ -295,7 +295,7 @@ class ServiceGenerator {
     });
   }
 
-  public genFile(excludeServices: any = [], customTypes: any = {}) {
+  public genFile(includeServices: any = [], excludeServices: any = [], customTypes: any = {}) {
     const basePath = this.config.serversPath || './src/service';
     try {
       const finalPath = join(basePath, this.config.projectName);
@@ -338,7 +338,7 @@ class ServiceGenerator {
     // 生成 controller 文件
     const prettierError = [];
     // 生成 service 统计
-    const services = this.getServiceTP().filter((item) => !excludeServices.includes(item.className));
+    const services = this.getServiceTP().filter((item) => includeServices.length > 0 ? includeServices.includes(item.className) : !excludeServices.includes(item.className));
     services.forEach((tp) => {
       // 根据当前数据源类型选择恰当的 controller 模版
       const template = 'serviceController';
@@ -366,7 +366,7 @@ class ServiceGenerator {
     const [prettierContent, hasError] = prettierFile(fullTypes);
     prettierError.push(hasError);
 
-    writeFileSync(path.join(this.finalPath, ".fullTypes.js"), prettierContent, {encoding: 'utf8'});
+    writeFileSync(path.join(this.finalPath, ".fullTypes.js"), prettierContent, { encoding: 'utf8' });
 
     if (prettierError.includes(true)) {
       Log(`🚥 格式化失败，请检查 service 文件内可能存在的语法错误`);
@@ -460,11 +460,11 @@ class ServiceGenerator {
                 const prefix =
                   typeof this.config.apiPrefix === 'function'
                     ? `${this.config.apiPrefix({
-                        path: formattedPath,
-                        method: newApi.method,
-                        namespace: tag,
-                        functionName,
-                      })}`.trim()
+                      path: formattedPath,
+                      method: newApi.method,
+                      namespace: tag,
+                      functionName,
+                    })}`.trim()
                     : this.config.apiPrefix.trim();
 
                 if (!prefix) {
@@ -702,17 +702,17 @@ class ServiceGenerator {
     const requiredPropKeys = schemaObject.required;
     return schemaObject.properties
       ? Object.keys(schemaObject.properties).map((propName) => {
-          const schema: SchemaObject =
-            (schemaObject.properties && schemaObject.properties[propName]) || DEFAULT_SCHEMA;
-          return {
-            ...schema,
-            name: propName,
-            type: getType(schema),
-            desc: [schema.title, schema.description].filter((s) => s).join(' '),
-            // 如果没有 required 信息，默认全部是非必填
-            required: requiredPropKeys ? requiredPropKeys.some((key) => key === propName) : false,
-          };
-        })
+        const schema: SchemaObject =
+          (schemaObject.properties && schemaObject.properties[propName]) || DEFAULT_SCHEMA;
+        return {
+          ...schema,
+          name: propName,
+          type: getType(schema),
+          desc: [schema.title, schema.description].filter((s) => s).join(' '),
+          // 如果没有 required 信息，默认全部是非必填
+          required: requiredPropKeys ? requiredPropKeys.some((key) => key === propName) : false,
+        };
+      })
       : [];
   }
 
