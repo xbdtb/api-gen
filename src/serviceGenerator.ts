@@ -356,7 +356,7 @@ class ServiceGenerator {
     });
 
     // 生成 index 文件
-    const classNames = this.classNameList.filter((item) => !excludeServices.includes(item.fileName))
+    const classNames = this.classNameList.filter((item) => includeServices.length > 0 ? includeServices.includes(item.fileName) : !excludeServices.includes(item.fileName))
     this.genFileFromTemplate(`index.ts`, 'serviceIndex', {
       list: classNames,
       disableTypeCheck: false,
