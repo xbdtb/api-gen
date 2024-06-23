@@ -6,6 +6,9 @@ import converter from 'swagger2openapi';
 import { ServiceGenerator } from './serviceGenerator';
 import { mockGenerator } from './mockGenerator';
 import Log from './log';
+import common from 'oas-kit-common';
+
+common.sanitiseAll = (s) => { return s}
 
 const getImportStatement = (requestLibPath: string) => {
   if (requestLibPath && requestLibPath.startsWith('import')) {
